@@ -16,6 +16,8 @@ import {
 } from 'konsta/react';
 
 import DemoIcon from '../components/DemoIcon';
+import Tengah from './Tengah';
+import Bawah from './Bawah';
 
 export default function Home() {
   return (
@@ -33,8 +35,51 @@ export default function Home() {
           </Link>
         }
       />
+      <Block strong>
+        <p>Selamat Datang Jimmy</p>
+      </Block>
 
-      <Tabbar labels icons className="left-0 bottom-0 fixed">
+      <BlockTitle>Navigation</BlockTitle>
+
+      <List strong inset>
+        <ListItem
+          media={<DemoIcon />}
+          title="Foo Bar"
+          after={<Badge colors={{ bg: 'bg-gray-500' }}>0</Badge>}
+        />
+
+        <ListItem
+          media={<DemoIcon />}
+          title="Ivan Petrov"
+          after={<Badge>CEO</Badge>}
+        />
+
+        <ListItem
+          media={<DemoIcon />}
+          title="John Doe"
+          after={<Badge colors={{ bg: 'bg-green-500' }}>5</Badge>}
+        />
+
+        <ListItem
+          media={<DemoIcon />}
+          title="Jane Doe"
+          after={<Badge colors={{ bg: 'bg-yellow-500' }}>NEW</Badge>}
+        />
+        <ListItem
+          media={<DemoIcon />}
+          title="Foo Bar"
+          after={<Badge colors={{ bg: 'bg-gray-500' }}>0</Badge>}
+        />
+      </List>
+
+      <Block strong className="flex space-x-4">
+        <Button>Button 1</Button>
+        <Button>Button 2</Button>
+      </Block>
+
+      <Bawah />
+
+      <Tabbar labels icons className="left-0 bottom-0 fixed ">
         <TabbarLink
           active
           icon={
@@ -70,43 +115,6 @@ export default function Home() {
           label="Upload"
         />
       </Tabbar>
-
-      <Block strong>
-        <p>Selamat Datang Jimmy</p>
-      </Block>
-
-      <BlockTitle>Navigation</BlockTitle>
-
-      <List strong inset>
-        <ListItem
-          media={<DemoIcon />}
-          title="Foo Bar"
-          after={<Badge colors={{ bg: 'bg-gray-500' }}>0</Badge>}
-        />
-
-        <ListItem
-          media={<DemoIcon />}
-          title="Ivan Petrov"
-          after={<Badge>CEO</Badge>}
-        />
-
-        <ListItem
-          media={<DemoIcon />}
-          title="John Doe"
-          after={<Badge colors={{ bg: 'bg-green-500' }}>5</Badge>}
-        />
-
-        <ListItem
-          media={<DemoIcon />}
-          title="Jane Doe"
-          after={<Badge colors={{ bg: 'bg-yellow-500' }}>NEW</Badge>}
-        />
-      </List>
-
-      <Block strong className="flex space-x-4">
-        <Button>Button 1</Button>
-        <Button>Button 2</Button>
-      </Block>
     </Page>
   );
 }
