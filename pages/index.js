@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-
 // Konsta UI components
 import {
+  Block,
+  BlockTitle,
+  Button,
   Page,
   Navbar,
   NavbarBackLink,
@@ -14,117 +14,42 @@ import {
   Tabbar,
   TabbarLink,
 } from 'konsta/react';
+
 import DemoIcon from '../components/DemoIcon';
 
 export default function Home() {
   return (
     <Page>
       <Navbar
-        title="Badge"
+        title="Asli jim"
         right={
           <Link navbar iconOnly>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-              ></path>
-            </svg>
+            <Icon
+              ios={<DemoIcon className="w-7 h-7" />}
+              material={<DemoIcon className="w-6 h-6" />}
+              badge="5"
+              badgeColors={{ bg: 'bg-red-500' }}
+            />
           </Link>
         }
       />
-      <Tabbar labels icons className="left-0 bottom-0 fixed">
-        <TabbarLink
-          active
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-              ></path>
-            </svg>
-          }
-          label="Inbox"
-        />
-        <TabbarLink
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-              ></path>
-            </svg>
-          }
-          label="Calendar"
-        />
-        <TabbarLink
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"
-              ></path>
-            </svg>
-          }
-          label="Upload"
-        />
-      </Tabbar>
-      <List strong inset>
-        <ListItem
-          media={<DemoIcon />}
-          title="Foo Bar"
-          after={<Badge colors={{ bg: 'bg-gray-500' }}>0</Badge>}
-        />
 
-        <ListItem
-          media={<DemoIcon />}
-          title="Ivan Petrov"
-          after={<Badge>CEO</Badge>}
-        />
+      <Block strong>
+        <p>
+          Here is your Next.js & Konsta UI app. Let's see what we have here.
+        </p>
+      </Block>
 
-        <ListItem
-          media={<DemoIcon />}
-          title="John Doe"
-          after={<Badge colors={{ bg: 'bg-green-500' }}>5</Badge>}
-        />
-
-        <ListItem
-          media={<DemoIcon />}
-          title="Jane Doe"
-          after={<Badge colors={{ bg: 'bg-yellow-500' }}>NEW</Badge>}
-        />
+      <BlockTitle>Navigation</BlockTitle>
+      <List>
+        <ListItem href="/about/" title="About" />
+        <ListItem href="/form/" title="Form" />
       </List>
+
+      <Block strong className="flex space-x-4">
+        <Button>Button 1</Button>
+        <Button>Button 2</Button>
+      </Block>
     </Page>
   );
 }
